@@ -15,7 +15,12 @@ export default class ArticlePage extends Component {
   }
 
   handleGoBack = () => {
-    this.props.history.push("/articles");
+    const { history, location } = this.props;
+    if (location.state) {
+      return history.push(location.state.from);
+    }
+
+    history.push("/articles");
   };
 
   render() {

@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Articles from "../pages/Articles";
+import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
+import ArticlesPage from "../pages/ArticlesPage";
 import NotFound from "../pages/NotFound";
 import Nav from "./Nav/Nav";
 import ArticlePage from "../pages/ArticlePage";
@@ -18,10 +18,10 @@ const App = () => (
   <div style={containerStyle}>
     <Nav></Nav>
     <Switch>
-      <Route path="/" exact component={Home} />
+      <Route path="/" exact component={HomePage} />
       <Route path="/articles/:id" component={ArticlePage} />
-      <Route path="/articles" component={Articles} />
-      <Route path="/about" component={About} />
+      <Route path="/articles" component={ArticlesPage} />
+      <Route path="/about" component={AboutPage} />
       <Route component={NotFound} />
     </Switch>
   </div>
